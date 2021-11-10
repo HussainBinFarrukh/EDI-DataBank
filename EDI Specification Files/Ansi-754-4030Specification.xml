@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 754 Routing Instructions -->
+<TransactionSpecification TransactionSetIdentifierCode="754" xmlns="http://tempuri.org/X12ParserSpecification.xsd">
+  <Segment SegmentId="BGN" Repeat="45"/>
+  <Segment SegmentId="PER"/>
+  <Loop LoopId="0100">
+    <Name>N1Loop1</Name>
+    <StartingSegment SegmentId="N1"/>
+    <Segment SegmentId="N2"/>
+    <Segment SegmentId="N3"/>
+    <Segment SegmentId="N4"/>
+  </Loop>
+  <Loop LoopId="0200">
+    <Name>LXLoop1</Name>
+    <StartingSegment SegmentId="LX"/>
+    <Segment SegmentId="L11"/>
+    <Segment SegmentId="BLR"/>
+    <Segment SegmentId="OID"/>
+    <!--<Segment SegmentId="SMD"/>-->
+    <!--<Segment SegmentId="PKG"/>-->
+    <!--<Segment SegmentId="PAL"/>-->
+    <Segment SegmentId="G62"/>
+    <Segment SegmentId="MSI"/>
+    <!--<Segment SegmentId="MTX"/>-->
+    <Loop LoopId="0210">
+      <Name>QTYLoop1</Name>
+      <StartingSegment SegmentId="QTY"/>
+      <Segment SegmentId="AT9"/>
+    </Loop>
+    <Loop LoopId="0220">
+      <Name>N1Loop2</Name>
+      <StartingSegment SegmentId="N1"/>
+      <Segment SegmentId="N2"/>
+      <Segment SegmentId="N3"/>
+      <Segment SegmentId="N4"/>
+      <!--<Segment SegmentId="PER"/>-->
+    </Loop>
+  </Loop>
+</TransactionSpecification>
+

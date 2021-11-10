@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--820 Payment Order/Remittance Advice-->
+<TransactionSpecification TransactionSetIdentifierCode="820" xmlns="http://tempuri.org/X12ParserSpecification.xsd">
+  <Segment SegmentId="BPR" Usage="Required" Repeat="1" />
+  <Segment SegmentId="BPS"/>
+  <Segment SegmentId="NTE" />
+  <Segment SegmentId="TRN" Repeat="1" />
+  <Segment SegmentId="CUR" Repeat="1" />
+  <Segment SegmentId="REF" />
+  <Segment SegmentId="DTM" />
+  <Loop LoopId="N1">
+    <Name>N1Loop1</Name>
+    <StartingSegment SegmentId="N1" />
+    <Segment SegmentId="N2" />
+    <Segment SegmentId="N3" />
+    <Segment SegmentId="N4" Repeat="1" />
+    <Segment SegmentId="REF" />
+    <Segment SegmentId="PER" />
+    <Segment SegmentId="RDM" Repeat="1" />
+    <Segment SegmentId="DTM" Repeat="1" />
+  </Loop>
+  <Loop LoopId="ENT">
+    <Name>ENTLoop1</Name>
+    <StartingSegment SegmentId="ENT" />
+    <Loop LoopId="NM1">
+      <Name>NM1Loop1</Name>
+      <StartingSegment SegmentId="NM1" />
+      <Segment SegmentId="N2" />
+      <Segment SegmentId="N3" />
+      <Segment SegmentId="N4" Repeat="1" />
+      <Segment SegmentId="REF" />
+      <Segment SegmentId="PER" />
+    </Loop>
+    <Loop LoopId="ADX">
+      <Name>ADXLoop1</Name>
+      <StartingSegment SegmentId="ADX" />
+      <Segment SegmentId="NTE" />
+      <Segment SegmentId="PER" />
+      <Segment SegmentId="DTM" Repeat="1" />
+      <Loop LoopId="REF">
+        <Name>REFLoop1</Name>
+        <StartingSegment SegmentId="REF" />
+        <Segment SegmentId="DTM" />
+      </Loop>
+      <Loop LoopId="IT1">
+        <Name>IT1Loop1</Name>
+        <StartingSegment SegmentId="IT1" />
+        <Loop LoopId="REF">
+          <Name>REFLoop2</Name>
+          <StartingSegment SegmentId="REF" />
+          <Segment SegmentId="DTM" Repeat="1" />
+        </Loop>
+        <Loop LoopId="SAC">
+          <Name>SACLoop1</Name>
+          <StartingSegment SegmentId="SAC" />
+          <Segment SegmentId="TXI" />
+        </Loop>
+        <Loop LoopId="SLN">
+          <Name>SLNLoop1</Name>
+          <StartingSegment SegmentId="SLN" />
+          <Loop LoopId="REF">
+            <Name>REFLoop3</Name>
+            <StartingSegment SegmentId="REF" />
+            <Segment SegmentId="DTM" />
+          </Loop>
+          <Loop LoopId="SAC">
+            <Name>SACLoop2</Name>
+            <StartingSegment SegmentId="SAC" />
+            <Segment SegmentId="TXI" />
+          </Loop>
+        </Loop>
+      </Loop>
+    </Loop>
+    <Loop LoopId="RMR">
+      <Name>RMRLoop1</Name>
+      <StartingSegment SegmentId="RMR" />
+      <Segment SegmentId="NTE" />
+      <Segment SegmentId="REF" />
+      <Segment SegmentId="DTM" />
+      <Loop LoopId="IT1">
+        <Name>IT1Loop2</Name>
+        <StartingSegment SegmentId="IT1" />
+        <Loop LoopId="REF">
+          <Name>REFLoop4</Name>
+          <StartingSegment SegmentId="REF" />
+          <Segment SegmentId="DTM" Repeat="1" />
+        </Loop>
+        <Loop LoopId="SAC">
+          <Name>SACLoop3</Name>
+          <StartingSegment SegmentId="SAC" />
+          <Segment SegmentId="TXI" />
+          <Segment SegmentId="TX1" /> <!-- This is actually a misspelling, but will leave in just in case -->
+        </Loop>
+        <Loop LoopId="SLN">
+          <Name>SLNLoop2</Name>
+          <StartingSegment SegmentId="SLN" />
+          <Loop LoopId="REF">
+            <Name>REFLoop5</Name>
+            <StartingSegment SegmentId="REF" />
+            <Segment SegmentId="DTM" />
+          </Loop>
+          <Loop LoopId="SAC">
+            <Name>SACLoop4</Name>
+            <StartingSegment SegmentId="SAC" />
+            <Segment SegmentId="TXI" />
+          </Loop>
+        </Loop>
+      </Loop>
+      <Loop LoopId="ADX">
+        <Name>ADXLoop2</Name>
+        <StartingSegment SegmentId="ADX" />
+        <Segment SegmentId="NTE" />
+        <Segment SegmentId="PER" />
+        <Segment SegmentId="DTM"/>
+        <Loop LoopId="REF">
+          <Name>REFLoop6</Name>
+          <StartingSegment SegmentId="REF" />
+          <Segment SegmentId="DTM" />
+        </Loop>
+        <Loop LoopId="IT1">
+          <Name>IT1Loop3</Name>
+          <StartingSegment SegmentId="IT1" />
+          <Loop LoopId="REF">
+            <Name>REFLoop7</Name>
+            <StartingSegment SegmentId="REF" />
+            <Segment SegmentId="DTM" Repeat="1" />
+          </Loop>
+          <Loop LoopId="SAC">
+            <Name>SACLoop5</Name>
+            <StartingSegment SegmentId="SAC" />
+            <Segment SegmentId="TXI" />
+          </Loop>
+          <Loop LoopId="SLN">
+            <Name>SLNLoop3</Name>
+            <StartingSegment SegmentId="SLN" />
+            <Loop LoopId="REF">
+              <Name>REFLoop8</Name>
+              <StartingSegment SegmentId="REF" />
+              <Segment SegmentId="DTM" />
+            </Loop>
+            <Loop LoopId="SAC">
+              <Name>SACLoop6</Name>
+              <StartingSegment SegmentId="SAC" />
+              <Segment SegmentId="TXI" />
+            </Loop>
+          </Loop>
+        </Loop>
+      </Loop>
+    </Loop>
+  </Loop>
+  <Loop LoopId="TXP">
+    <Name>TXPLoop1</Name>
+    <StartingSegment SegmentId="TXP" />
+    <Segment SegmentId="TXI" />
+  </Loop>
+  <Loop LoopId="DED">
+    <Name>DEDLoop1</Name>
+    <StartingSegment SegmentId="DED" />
+  </Loop>
+  <Loop LoopId="LX">
+    <Name>LXLoop1</Name>
+    <StartingSegment SegmentId="LX" />
+    <Segment SegmentId="REF" />
+    <Segment SegmentId="TRN" />
+    <Loop LoopId="NM1">
+      <Name>NM1Loop2</Name>
+      <StartingSegment SegmentId="NM1" />
+      <Segment SegmentId="REF" />
+      <Segment SegmentId="G53" Repeat="1" />
+      <Loop LoopId="AIN">
+        <Name>AINLoop1</Name>
+        <StartingSegment SegmentId="AIN" />
+        <Segment SegmentId="QTY" />
+        <Segment SegmentId="DTP" />
+      </Loop>
+      <Loop LoopId="PEN">
+        <Name>PENLoop1</Name>
+        <StartingSegment SegmentId="PEN" />
+        <Segment SegmentId="AMT" />
+        <Segment SegmentId="DTP" />
+        <Loop LoopId="INV">
+          <Name>INVLoop1</Name>
+          <StartingSegment SegmentId="INV" />
+          <Segment SegmentId="DTP" />
+        </Loop>
+      </Loop>
+    </Loop>
+  </Loop>
+  <Loop LoopId="N9" LoopRepeat="1">
+    <Name>N9Loop1</Name>
+    <StartingSegment SegmentId="N9" />
+    <Loop LoopId="AMT">
+      <Name>AMTLoop1</Name>
+      <StartingSegment SegmentId="AMT" />
+      <Segment SegmentId="REF" />
+    </Loop>
+    <Loop LoopId="N1">
+      <Name>N1Loop2</Name>
+      <StartingSegment SegmentId="N1" />
+      <Segment SegmentId="REF" />
+      <Loop LoopId="EMS">
+        <Name>EMSLoop1</Name>
+        <StartingSegment SegmentId="EMS" />
+        <Segment SegmentId="ATN" />
+        <Segment SegmentId="AIN" />
+        <Segment SegmentId="PYD" />
+      </Loop>
+    </Loop>
+  </Loop>
+  <Loop LoopId="RYL">
+    <Name>RYLLoop1</Name>
+    <StartingSegment SegmentId="RYL" />
+    <Loop LoopId="NM1">
+      <Name>NM1Loop3</Name>
+      <StartingSegment SegmentId="NM1" />
+      <Loop LoopId="LOC">
+        <Name>LOCLoop1</Name>
+        <StartingSegment SegmentId="LOC" />
+        <Loop LoopId="PID">
+          <Name>PIDLoop1</Name>
+          <StartingSegment SegmentId="PID" />
+          <Segment SegmentId="DTM" Repeat="1" />
+          <Loop LoopId="PCT">
+            <Name>PCTLoop1</Name>
+            <StartingSegment SegmentId="PCT" />
+            <Segment SegmentId="QTY" Repeat="1" />
+            <Loop LoopId="AMT">
+              <Name>AMTLoop2</Name>
+              <StartingSegment SegmentId="AMT" />
+              <Segment SegmentId="ADX" />
+            </Loop>
+          </Loop>
+        </Loop>
+      </Loop>
+      <Loop LoopId="ASM" LoopRepeat="1">
+        <Name>ASMLoop1</Name>
+        <StartingSegment SegmentId="ASM" />
+        <Segment SegmentId="ADX" Repeat="1" />
+      </Loop>
+    </Loop>
+  </Loop>
+  <Loop LoopId="LS">
+    <Name>LSLoop1</Name>
+    <StartingSegment SegmentId="LS"/>
+    <Segment SegmentId="LE" Trailer="true"/>
+    <Loop LoopId="N1">
+      <Name>N1Loop3</Name>
+      <StartingSegment SegmentId="N1"/>
+      <Loop LoopId="RMT">
+        <Name>RMTLoop1</Name>
+        <StartingSegment SegmentId="RMT"/>
+        <Segment SegmentId="CUR"/>
+        <Segment SegmentId="REF"/>
+        <Segment SegmentId="DTM"/>
+      </Loop>
+    </Loop>
+  </Loop>
+</TransactionSpecification>
